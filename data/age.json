@@ -1,0 +1,53 @@
+{
+"agegroup": [
+    {
+      "id": 1,
+      "title": "Kid",
+      "imageSrc": "./kid.png",
+      "description": "Activities and content suitable for kids aged 5-12.",
+      "linkPage": "/learn/kid"
+    },
+    {
+      "id": 2,
+      "title": "Teen",
+      "imageSrc": "./teen.png",
+      "description": "Engaging content and activities for teenagers aged 13-18.",
+      "linkPage": "/learn/teen"
+    },
+    {
+      "id": 3,
+      "title": "Adult",
+      "imageSrc": "./adult.png",
+      "description": "Resources and activities for adults aged 19 and above.",
+      "linkPage": "/learn/adult"
+    }
+  ],
+  "leader": [
+    {
+      "rank": 1,
+      "username": "Its_Rahul",
+      "points": 1580
+    },
+    {
+      "rank": 2,
+      "username": "Lonely_Star",
+      "points": 1490
+    },
+    {
+      "rank": 3,
+      "username": "Mohit_123",
+      "points": 1480
+    },
+    {
+      "rank": 4,
+      "username": "RizzLord",
+      "points": 1360
+    },
+    {
+      "rank": 5,
+      "username": "My_GOAT_Antony",
+      "points": 1300
+    }
+  ]
+}
+
