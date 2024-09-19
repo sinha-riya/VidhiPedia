@@ -1,4 +1,4 @@
-//import { age } from "@/lib/queries";
+
 import List from "./list";
 
 
