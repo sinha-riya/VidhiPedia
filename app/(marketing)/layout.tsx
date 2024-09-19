@@ -1,6 +1,6 @@
 import React from 'react';
 import Footer from './footer';
-import Header from './header';
+
 
 type Props = {
   children: React.ReactNode;
@@ -8,12 +8,11 @@ type Props = {
 
 const MarketingLayout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <div className="min-h-screen flex flex-col relative">
       <main className="flex-1 flex flex-col items-center justify-center">
         {children}
       </main>
-      <Footer />
+      <Footer className="absolute bottom-0 left-0 w-full" />
     </div>
   );
 };

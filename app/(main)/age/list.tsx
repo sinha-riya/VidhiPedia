@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface Age {
   id: number;
@@ -31,6 +32,13 @@ const List = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {ageGroups.map((age) => (
+        <motion.div
+        key={age.id}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.3 }}
+      >
         <Card key={age.id} className="shadow-lg">
           <CardHeader>
             <img src={age.imageSrc} alt={age.title} className="w-full h-full object-cover" />
@@ -45,6 +53,7 @@ const List = () => {
             </Link>
           </CardFooter>
         </Card>
+      </motion.div>
       ))}
     </div>
   );
