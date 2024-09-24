@@ -1,62 +1,83 @@
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
+import React from 'react';
 import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 
+// Define the Age interface to type the age-related data
 interface Age {
-  id: number;
-  title: string;
-  imageSrc: string;
-  description: string;
-  linkPage: string;
+    id: number;
+    title: string;
+    imageSrc: string;
+    description: string;
+    linkPage: string;
 }
 
-export const ages: Age[] = [];
+// Array of age categories with their respective data
+const ages: Age[] = [
+  {
+    id: 1,
+    title: "Kid",
+    imageSrc: "./kid.png",
+    description: "Once Upon A Time...",
+    linkPage: "/story/kid"
+  },
+  {
+    id: 2,
+    title: "Teen",
+    imageSrc: "./teen.png",
+    description: "So, you think you know it all?",
+    linkPage: "/story/teen"
+  },
+  {
+    id: 3,
+    title: "Adult",
+    imageSrc: "./adult.png",
+    description: "Can you handle the heat?",
+    linkPage: "/story/adult"
+  }
+];
 
-const List = () => {
-  const [ageGroups, setAgeGroups] = useState<Age[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch('http://localhost:4000/agegroup');
-      const data = await response.json();
-      setAgeGroups(data);
-    };
-
-    fetchData();
-  }, []);
-
+// Functional component to render the list of quiz categories
+const ListPage = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      {ageGroups.map((age) => (
-        <motion.div
-        key={age.id}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        whileHover={{ scale: 1.05 }}
-        transition={{ duration: 0.3 }}
-      >
-        <Card key={age.id} className="shadow-lg">
-          <CardHeader>
-            <img src={age.imageSrc} alt={age.title} className="w-full h-full object-cover" />
-          </CardHeader>
-          <CardContent>
-            <h2 className="text-xl font-bold">{age.title}</h2>
-            <p>{age.description}</p>
-          </CardContent>
-          <CardFooter className="flex justify-end">
-            <Link href={age.linkPage}>
-              <Button className="btn btn-primary" variant={'secondary'} >Let's Go</Button>
-            </Link>
-          </CardFooter>
-        </Card>
-      </motion.div>
-      ))}
+    <div className="p-4">
+      {/* Grid container for the cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {/* Map through the ages array to create a card for each age category */}
+        {ages.map((age) => (
+          <motion.div
+          key={age.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+        >
+          <Card key={age.id} className="shadow-lg">
+            <CardHeader>
+              {/* Image and title for the card */}
+              <img src={age.imageSrc} alt={age.title} className="w-full h-full object-cover" />
+              <h2 className="text-xl font-semibold mt-2">{age.title}</h2>
+            </CardHeader>
+            <CardContent>
+              {/* Description of the age category */}
+              <p>{age.description}</p>
+            </CardContent>
+            <CardFooter>
+              {/* Link to the quiz page for the age category */}
+              <Link href={age.linkPage}>
+                <Button variant="primary">Let's Begin</Button>
+              </Link>
+            </CardFooter>
+          </Card>
+          </motion.div>
+
+        ))}
+      </div>
     </div>
   );
 };
 
-export default List;
+export default ListPage;
