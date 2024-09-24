@@ -7,6 +7,7 @@ import { Progress } from '@/components/ui/progress';
 //import { Toast, ToastProvider } from '@/components/ui/toast';
 //import { useToast } from '@/hooks/use-toast';
 import { Toaster, toast } from 'sonner';
+import { useScore } from '@/components/score';
 
 
 type Question = {
@@ -20,62 +21,32 @@ const quizData: Question[] = [
   {
     question: 'If the Indian Constitution had a social media profile, what would its bio say?',
     options: ['"Just here to keep the peace ✌️"', '"Protecting your rights since 1950 👊"', '"DM me for equality! 🗣️"', '"Loves long walks through history 📜"'],
-    correctAnswer: 'B) "Protecting your rights since 1950 👊"',
+    correctAnswer: '"Protecting your rights since 1950 👊"',
     explanation: "“Constitutional Remedies” sounds like a superhero who swoops in to save the day when your rights are violated!"
   },
   {
     question: 'What is the best way to describe the Constitution in one word?',
-    options: ['A) Bossy', 'B) Chill', 'C) Fair', 'D) Mysterious'],
+    options: ['Bossy', 'Chill', 'Fair', 'Mysterious'],
     correctAnswer: 'Fair',
     explanation: "The Constitution is like a referee in a game, making sure everyone plays fair."
   },
   {
-    question: 'What is the capital of France?',
-    options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
-    correctAnswer: 'Paris',
-    explanation: "Paris is the capital of France."
+    question: 'What does ‘Liberty’ allow you to do?',
+    options: ['Pick your favorite ice cream flavor', 'Choose what you want to say and do', 'Watch TV all day', 'Choose the color of your shoes'],
+    correctAnswer: 'Choose what you want to say and do',
+    explanation: "Liberty gives you the freedom to make your own choices, as long as they don’t hurt others."
   },
   {
-    question: 'What is 2 + 2?',
-    options: ['3', '4', '5', '6'],
-    correctAnswer: '4',
-    explanation: "2 + 2 equals 4."
+    question: 'What would happen if there was no Constitution?',
+    options: ['Chaos everywhere', 'Endless fun with no rules', 'No school ever again', 'Free candy for everyone'],
+    correctAnswer: 'Chaos everywhere',
+    explanation: "Without the Constitution, there would be no rules to keep things fair, leading to chaos everywhere!"
   },
   {
-    question: 'What is the capital of France?',
-    options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
-    correctAnswer: 'Paris',
-    explanation: "Paris is the capital of France."
-  },
-  {
-    question: 'What is 2 + 2?',
-    options: ['3', '4', '5', '6'],
-    correctAnswer: '4',
-    explanation: "2 + 2 equals 4."
-  },
-  {
-    question: 'What is the capital of France?',
-    options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
-    correctAnswer: 'Paris',
-    explanation: "Paris is the capital of France."
-  },
-  {
-    question: 'What is 2 + 2?',
-    options: ['3', '4', '5', '6'],
-    correctAnswer: '4',
-    explanation: "2 + 2 equals 4."
-  },
-  {
-    question: 'What is the capital of France?',
-    options: ['Berlin', 'Madrid', 'Paris', 'Lisbon'],
-    correctAnswer: 'Paris',
-    explanation: "Paris is the capital"
-  },
-  {
-    question: 'What is 2 + 2?',
-    options: ['3', '4', '5', '6'],
-    correctAnswer: '4',
-    explanation: "2 + 2 equals 4."
+    question: 'What does ‘Justice’ mean in the Constitution?',
+    options: ['Getting extra dessert', 'Everyone getting what they deserve', 'Being the fastest runner', 'Always winning games'],
+    correctAnswer: 'Everyone getting what they deserve',
+    explanation: "Justice in the Constitution means making sure everyone is treated fairly and gets what they deserve!"
   },
   // Add more questions as needed
 ];
@@ -165,13 +136,18 @@ const QuizPage = () => {
         return '';
     };
 
+    const handleQuizCompletion = (newScore: number) => {
+        setScore(newScore);
+        setShowResults(true);
+      };
+
     // Calculate the progress value for the progress bar
     const progressValue = ((currentQuestionIndex + 1) / quizData.length) * 100;
 
     return (
         <>
             <Toaster position="top-right" />
-            <div className="p-4">
+            <div className="p-4 ml-8">
                 <h1 className="text-3xl text-center text-blue-500 font-bold mb-10">VidhiQuiz</h1>
                 <Progress value={progressValue} className="mb-10" />
                 <div className="mb-6">
@@ -188,6 +164,11 @@ const QuizPage = () => {
                         ))}
                     </div>
                 </div>
+                {answerSelected && (
+                <div className="mt-4 p-4 border rounded bg-gray-100">
+                    <p>{quizData[currentQuestionIndex].explanation}</p>
+                </div>
+                )}
                 <Pagination
                     total={quizData.length}
                     current={currentQuestionIndex + 1}
@@ -214,8 +195,8 @@ const QuizPage = () => {
                     )}
                     <div className="flex justify-end w-full">
                         <Button
+                            onClick={() => handleQuizCompletion(10)}
                             variant={'secondary'}
-                            onClick={handleSubmit}
                             className=''
                         >
                             Submit

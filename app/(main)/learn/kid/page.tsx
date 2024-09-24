@@ -38,6 +38,10 @@ const AdultPage = () => {
                   <SheetTitle className='text-2xl'>What is Constitution?</SheetTitle>
                   <SheetDescription className='text-xl mb-10'>
                   The Constitution is like a big rulebook that tells us how our country should work. It helps everyone live together happily by giving rules about what is right and wrong, and it makes sure people are treated fairly.
+                  
+                  <Link href="https://sansad.in/ls/about/introduction">
+                    <h2 className="text-blue-500">Article: What is Constitution</h2>
+                  </Link>
                   </SheetDescription>
                 </SheetHeader>
                 <SheetFooter>

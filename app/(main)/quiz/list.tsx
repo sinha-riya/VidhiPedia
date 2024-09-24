@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from 'framer-motion';
 import React from 'react';
 import { Card, CardHeader, CardContent, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -47,6 +48,13 @@ const ListPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {/* Map through the ages array to create a card for each age category */}
         {ages.map((age) => (
+          <motion.div
+          key={age.id}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ duration: 0.3 }}
+        >
           <Card key={age.id} className="shadow-lg">
             <CardHeader>
               {/* Image and title for the card */}
@@ -64,6 +72,8 @@ const ListPage = () => {
               </Link>
             </CardFooter>
           </Card>
+          </motion.div>
+
         ))}
       </div>
     </div>

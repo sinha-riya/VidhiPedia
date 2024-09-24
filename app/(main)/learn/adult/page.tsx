@@ -35,9 +35,13 @@ const AdultPage = () => {
               </SheetTrigger>
               <SheetContent>
                 <SheetHeader>
-                  <SheetTitle>What is Constitution?</SheetTitle>
-                  <SheetDescription>
+                  <SheetTitle className='text-2xl'>What is Constitution?</SheetTitle>
+                  <SheetDescription className='text-xl'>
                   The Constitution is the supreme law of the land, establishing the framework for government, outlining citizens' rights and duties, and balancing power across different branches of government. It ensures democracy and protects individual freedoms through a system of checks and balances.
+
+                  <Link href="https://sansad.in/ls/about/introduction">
+                    <h2 className="text-blue-500">Article: What is Constitution</h2>
+                  </Link>
                   </SheetDescription>
                 </SheetHeader>
                 <SheetFooter>
@@ -48,7 +52,8 @@ const AdultPage = () => {
               </SheetContent>
             </Sheet>
           </div>
-          <div className="mb-10">
+          <div className="mb-10 gap-4">
+            <div className="mb-10 gap-4">
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="learning">Another Sheet</Button>
@@ -67,7 +72,8 @@ const AdultPage = () => {
                 </SheetFooter>
               </SheetContent>
             </Sheet>
-          
+            </div>
+            <div className="mb-10 gap-4">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="learning">Intro</Button>
@@ -86,7 +92,8 @@ const AdultPage = () => {
                   </SheetFooter>
                 </SheetContent>
               </Sheet>
-            
+            </div>
+            <div className="mb-10 gap-4">
               <Sheet>
                 <SheetTrigger asChild>
                   <Button variant="learning">Another Sheet</Button>
@@ -105,6 +112,7 @@ const AdultPage = () => {
                   </SheetFooter>
                 </SheetContent>
               </Sheet>
+            </div>
             </div>
             <div className="mb-10">
               <Sheet>
