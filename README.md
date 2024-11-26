@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vidhipedia: Gamified Constitutional Literacy Platform
 
-## Getting Started
+## Overview  
+Vidhipedia is a cutting-edge platform designed to simplify and gamify the understanding of the **Indian Constitution** and legal rights. With engaging features like quizzes, storytelling games, treasure hunts, and an interactive timeline, Vidhipedia ensures learning is fun, age-appropriate, and accessible to all.  
 
-First, run the development server:
+Our mission is to empower citizens by increasing constitutional literacy and promoting civic engagement in an interactive and inclusive way.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features  
+- **Learning-Based Roadmaps**: Tailored paths for all age groups, from kids to adults.  
+- **Quizzes & Story Games**: Fun and challenging games to learn concepts.  
+- **Draft Simulation**: Experience creating constitutional drafts interactively.  
+- **Interactive Timeline**: Explore important events in India's constitutional history.  
+- **Treasure Hunt**: Gamified learning with puzzles and clues.  
+- **Multilingual Support**: Available in multiple languages to cater to diverse audiences.  
+- **Forum & Leaderboard**: Engage in discussions and track achievements.  
+- **Chatbot**: Instant answers to queries on constitutional and legal topics.  
+- **Streak Feature**: Motivational streaks for consistent engagement.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Problem Statement  
+- **Low Constitutional Literacy**: The Constitution is often perceived as dense and inaccessible.  
+- **Civic Engagement**: Lack of understanding of rights and duties leads to disempowered citizens.  
+- **Complex Legal Framework**: Misinterpretation of laws creates barriers to knowledge.  
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Solution  
+Vidhipedia makes learning about the Constitution accessible, interactive, and fun. By blending education with gamification, we create a platform that resonates with users of all ages and backgrounds.  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tech Stack  
+- **Frontend**: Next.js with TypeScript, TailwindCSS, ShadCN.  
+- **Backend**: Node.js, Express.js, Prisma ORM.  
+- **Database**: PostgreSQL.  
+- **Auth**: OAuth2.0 with social login support.  
+- **Hosting**: Vercel for frontend; AWS for backend services.  
+- **Analytics**: Google Analytics and custom user engagement tracking.  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Revenue Model  
+- **Ad-Supported**: Free access supported by targeted advertisements.  
+- **Institutional Partnerships**: Bulk subscriptions for schools and colleges.  
+- **CSR Packages**: Sponsored access for underprivileged communities.  
+- **Branded Content**: Collaborations with brands for storytelling games and challenges.  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Get Started  
+
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/<your-username>/vidhipedia.git
+   cd vidhipedia
